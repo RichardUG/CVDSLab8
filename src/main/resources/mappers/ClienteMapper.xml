@@ -69,5 +69,13 @@
         <collection property='rentados' javaType='ArrayList' ofType='ItemRentado' resultMap='edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper.ItemRentadoResult' columnPrefix="ir_">
         </collection>
     </resultMap>
+    <insert id="agregarItemRentadoACliente" parameterType="map" >
+        insert into VI_ITEMRENTADO(CLIENTES_documento,ITEMS_id,fechainiciorenta, fechafinrenta) values (#{idcl},#{idit},#{Fechai},#{Fechaf});
+    </insert>
+    <insert id="insertarCliente" parameterType="map">
+        insert into VI_CLIENTES(documento,nombre,telefono,direccion,email,vetado)
+        values (#{cliente.documento},#{cliente.nombre},#{cliente.telefono},#{cliente.direccion},#{cliente.email},#{cliente.vetado});
+    </insert>
+
           	
 </mapper>
