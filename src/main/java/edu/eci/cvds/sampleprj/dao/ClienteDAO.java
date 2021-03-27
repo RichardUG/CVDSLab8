@@ -14,4 +14,5 @@ public interface ClienteDAO {
     public void agregarItemRentado(long idcli, int id, Date fechainicio, Date fechafin) throws PersistenceException;
     public List<Cliente> consultarClientes() throws PersistenceException;
     public void save(Cliente cli) throws PersistenceException;
+    public void vetarCliente(long idCliente,int estado) throws PersistenceException;
 }

@@ -61,4 +61,14 @@ public class MyBATISClienteDAO implements ClienteDAO {
         }
 
     }
+    @Override
+    public void vetarCliente(long idCliente, int estado) throws PersistenceException {
+        try{
+            clienteMapper.vetarCliente(idCliente,estado);
+        }
+        catch(org.apache.ibatis.exceptions.PersistenceException e) {
+            throw new PersistenceException(PersistenceException.V_CLIENTE);
+        }
+
+    }
 }

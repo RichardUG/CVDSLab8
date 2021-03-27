@@ -18,7 +18,7 @@ import edu.eci.cvds.sampleprj.dao.mybatis.MyBATISTipoItemDAO;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 import edu.eci.cvds.samples.services.impl.ServiciosAlquilerImpl;
 
-public class GuiceContextListener implements ServletContextListener {
+public class  GuiceContextListener implements ServletContextListener {
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
         ServletContext servletContext = servletContextEvent.getServletContext();
@@ -32,7 +32,7 @@ public class GuiceContextListener implements ServletContextListener {
                 install(JdbcHelper.MySQL);
                 setEnvironmentId("development");
 
-                setClassPathResource("mybatis-config-h2.xml");
+                setClassPathResource("mybatis-config.xml");
                 bind(ItemDAO.class).to(MyBATISItemDAO.class);
                 bind(TipoItemDAO.class).to(MyBATISTipoItemDAO.class);
                 bind(ClienteDAO.class).to(MyBATISClienteDAO.class);

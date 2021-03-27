@@ -44,5 +44,26 @@
         <result property="genero" column="genero"/>
         <association property="tipo" javaType="TipoItem" resultMap="edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper.TipoItemResult" columnPrefix="ti_"/>
     </resultMap>
+    <select id="consultarDisponibles" parameterType="map" resultMap="ItemResult">
+        select
+        DISTINCT (i.id)  ,
+        i.nombre as nombre,
+        i.descripcion as descripcion,
+        i.fechalanzamiento as fechalanzamiento ,
+        i.tarifaxdia as tarifaxdia ,
+        i.formatorenta  as formatorenta,
+        i.genero  as genero,
+        ti.id  as ti_id,
+        ti.descripcion as ti_descripcion
 
+        FROM VI_ITEMS as i
+        left join VI_ITEMRENTADO as ir on i.id=ir.ITEMS_id
+        left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id
+        <![CDATA[
+            where ir.fechafinrenta <(select CURRENT_DATE) or ir.ITEMS_id is NULL;
+        ]]>
+    </select>
+    <update id="actualizarTarifaItem" parameterType="map">
+        update VI_ITEMS set tarifaxdia=#{tarifa} where id=#{id}
+    </update>
 </mapper>
