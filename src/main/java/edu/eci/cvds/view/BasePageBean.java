@@ -1,10 +1,11 @@
 package edu.eci.cvds.view;
 
-import java.io.Serializable;
+import com.google.inject.Injector;
+
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
-import com.google.inject.Injector;
+import java.io.Serializable;
 
 public abstract class BasePageBean implements Serializable {
 

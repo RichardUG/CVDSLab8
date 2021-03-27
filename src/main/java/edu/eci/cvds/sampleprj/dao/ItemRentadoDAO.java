@@ -1,6 +1,5 @@
 package edu.eci.cvds.sampleprj.dao;
 
-import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.ItemRentado;
 
 import java.util.List;

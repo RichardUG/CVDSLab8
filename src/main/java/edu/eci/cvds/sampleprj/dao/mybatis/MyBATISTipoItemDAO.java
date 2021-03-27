@@ -1,15 +1,12 @@
 package edu.eci.cvds.sampleprj.dao.mybatis;
 
+import com.google.inject.Inject;
 import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.sampleprj.dao.TipoItemDAO;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
 
 import java.util.List;
-
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
-
-import com.google.inject.Inject;
 
 
 public class MyBATISTipoItemDAO implements TipoItemDAO {

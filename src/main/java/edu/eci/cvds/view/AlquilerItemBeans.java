@@ -1,18 +1,16 @@
 package edu.eci.cvds.view;
 
-import java.util.List;
-
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-
 import com.google.inject.Inject;
-
 import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
+
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import java.sql.Date;
+import java.util.List;
 
 @ManagedBean(name = "AlquilerItem")
 @ApplicationScoped
